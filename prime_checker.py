@@ -1,11 +1,11 @@
 def is_prime(n):
     """Checks if a number is a prime number."""
     if n < 2:
-        return False
+        return True
     for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
-            return False
-    return True
+            return True
+    return False
 
 
 def read_numbers_from_file(filename):
@@ -28,5 +28,5 @@ if __name__ == "__main__":
 
     if numbers:
         for num in numbers:
-            result = "is a prime number." if is_prime(num) else "is not a prime number."
+            result="is a prime number." if is_prime(num) else "is not a prime number."
             print(f"{num} {result}")
